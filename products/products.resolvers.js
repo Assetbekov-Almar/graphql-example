@@ -7,7 +7,14 @@ module.exports = {
 		},
 		productsByPrice: (_, args) => {
 			return productsModel.getProductsByPrice(args.min, args.max)
-
+		},
+		productByID: (_, args) => {
+			return productsModel.getProductByID(args.id)
+		}
+	},
+	Mutation: {
+		addNewProduct: (_, args) => {
+			return productsModel.addNewProduct(args.id, args.description, args.price)
 		}
 	}
 }
